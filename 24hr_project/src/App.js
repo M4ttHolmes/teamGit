@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Ticketmaster from "./components/Ticketmaster";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h4>Using geolocation JavaScript API in React</h4>
+        <Ticketmaster />
       </div>
     );
   }
