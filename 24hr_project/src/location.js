@@ -1,4 +1,13 @@
-import React, { Component } from "react";
+import { Component } from "react";
+
+function FindLocation() {
+    if (navigator.geolocation) {
+        console.log("GeoLocation is Available!");
+    } else {
+      console.log("Sorry Not available!");
+    }}
+
+    FindLocation();
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +16,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  FindLocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
       console.log("Latitude is :", position.coords.latitude);
       console.log("Longitude is :", position.coords.longitude);
@@ -23,4 +32,6 @@ class App extends Component {
   }
 }
 
-export default App
+export default FindLocation;
+
+// render(<App />, document.getElementById("root"));
