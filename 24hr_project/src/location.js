@@ -1,36 +1,37 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import { Component } from "react";
 
-function componentDidMount() {
-    if ("geolocation" in navigator) {
-      console.log("Available");
+function FindLocation() {
+    if (navigator.geolocation) {
+        console.log("GeoLocation is Available!");
     } else {
-        console.log("Not Available");
-    }
+      console.log("Sorry Not available!");
+    }}
+
+    FindLocation();
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  FindLocation() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h4>Using geolocation JavaScript API in React</h4>
+      </div>
+    );
+  }
 }
 
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//     };
-//   }
+export default FindLocation;
 
-//   componentDidMount() {
-//     navigator.geolocation.getCurrentPosition(function(position) {
-//       console.log("Latitude is :", position.coords.latitude);
-//       console.log("Longitude is :", position.coords.longitude);
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <h4>Using geolocation JavaScript API in React</h4>
-//       </div>
-//     );
-//   }
-// }
-
-
-render(<App />, document.getElementById("root"));
+// render(<App />, document.getElementById("root"));

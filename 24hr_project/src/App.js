@@ -1,13 +1,26 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div>
-      <h1>Location Services App</h1>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h4>Using geolocation JavaScript API in React</h4>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App
