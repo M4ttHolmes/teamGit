@@ -12,14 +12,14 @@ class Location extends Component {
     
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(
-            function(position) {
+            (position) => {
                 console.log("Latitude is :", position.coords.latitude);
                 console.log("Longitude is :", position.coords.longitude);
                 console.log(position);
-                // this.setState({
-                //     lat: position.coords.latitude,
-                //     long: position.coords.longitude,
-                // })
+                this.setState({
+                    lat: position.coords.latitude,
+                    long: position.coords.longitude,
+                })
             },
             function(error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
