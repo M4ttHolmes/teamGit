@@ -1,6 +1,6 @@
 import React from "react";
 import OpenWeather from "./OpenWeather";
-import Nasa from "./NASA/Nasa";
+import Nasa from "./NASA/nasa";
 import Ticketmaster from "./Ticketmaster"
 import Radium from "radium";
 
