@@ -1,4 +1,18 @@
 import React from 'react'
+import Radium from "radium";
+
+const styles = {
+
+    li: {
+        listStyleType: "none",
+        padding: "20px"
+    },
+
+    left: {
+
+    }
+
+}
 
 class Ticketmaster extends React.Component {
 
@@ -19,11 +33,11 @@ componentDidMount = () => {
     fetch(`${this.state.url}apikey=${this.state.key}&latlong=${this.props.lat},${this.props.long}`)
     
     .then(response => response.json())
-    .then(json => this.setState({
-        events: json._embedded.events
-    }))
+    .then(json => {this.setState({
+        events: json._embedded.events})
+        console.log(this.state.events);
+    })
     .catch(err => console.log(err))
-   
 };
 
 render() {
@@ -33,7 +47,8 @@ render() {
             <ul id='event-name'>
             {this.state.events.map((event, key) => {
                     return(
-                        <li key={event}>{event.name}, on {event.dates.start.localDate}</li>
+                        <li style={styles.li} key={key}>{event.name}, on {event.dates.start.localDate}</li>
+
                     )
                 })}
             </ul>
@@ -44,4 +59,4 @@ render() {
 }
 }
 
-export default Ticketmaster;
+export default Radium(Ticketmaster);
