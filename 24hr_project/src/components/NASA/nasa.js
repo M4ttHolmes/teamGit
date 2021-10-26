@@ -35,7 +35,7 @@ const Nasa = (props) => {
                 <h1>Your Current Location:</h1>
                 <h4>Latitude: {props.lat}</h4>
                 <h4>Longitude: {props.long}</h4>
-                <img style={{width: "500px"}} src={img} />
+                <img style={{width: "80%"}} src={img} />
             </div>  
         </div>
     )
