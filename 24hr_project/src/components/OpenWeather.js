@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Location from './GeoLocation';
 
-
 class OpenWeather extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -11,35 +9,34 @@ class OpenWeather extends React.Component {
             key: '11f6fcccb806a30c1309f366cd24725b',
             lat: '',
             long: '',
-            temp: 0
+            temp: 0,
+            error: null,
+            isLoaded: false,
+            posts: []
         }
     }
 
 
-componentDidMount = () => {
-    console.log("OpenWeather")
-    fetch(`${this.state.url}lat=${this.props.lat}&lon=${this.props.long}&units=imperial&appid=${this.state.key}`)
-    
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .then(json => this.setState({
-        temp: json.main.temp
-    }))
-    .catch(err => console.log(err))
+    componentDidMount = () => {
+        console.log("OpenWeather")
+        fetch(`${this.state.url}lat=${this.props.lat}&lon=${this.props.long}&appid=${this.state.key}&units=imperial`)
         
-    
-};
+        .then(response => response.json())
+        .then(json => this.setState({
+            temp: json.main.temp
+        }))
+        .catch(err => console.log(err))
+        
+    };
 
 
-render() {
-    return (
-        <div>
-
-        </div>
-    )
-      
-    
-}
+    render() {
+        return (
+            <div>
+                <h2>Current Temp: {this.state.temp}</h2>
+            </div>
+        )
+    }
 }
 
 
