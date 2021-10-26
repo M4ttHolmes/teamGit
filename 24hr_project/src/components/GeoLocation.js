@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import OpenWeather from "./OpenWeather";
-import Nasa from "./NASA/Nasa";
+import Nasa from "./NASA/nasa";
 
 
 class Location extends React.Component {
