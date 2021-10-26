@@ -1,8 +1,24 @@
-
 import React, { Component } from "react";
 import OpenWeather from "./OpenWeather";
 import Nasa from "./NASA/Nasa";
 import Ticketmaster from "./Ticketmaster"
+import Radium from "radium";
+
+const styles = {
+
+    body: {
+        backgroundColor: "lightgrey",
+        color: "darkblue",
+        textAlign: "Center",
+        position: "relative",
+        width: "100vw",
+        height: "100%",
+        top: "0px" ,
+        paddingTop: "50px"
+    }
+
+}
+
 
 class Location extends React.Component {
     constructor(props) {
@@ -35,9 +51,9 @@ class Location extends React.Component {
   
     render() {
       return (
-        <div>
-            <Nasa lat={this.state.lat} long={this.state.long}/>
+        <div style={styles.body}>
             <OpenWeather lat = {this.state.lat} long = {this.state.long} />
+            <Nasa lat={this.state.lat} long={this.state.long}/>
             <Ticketmaster lat={this.state.lat} long={this.state.long} />
 
         </div>
@@ -45,4 +61,4 @@ class Location extends React.Component {
     }
   }
 
-  export default Location;
+  export default Radium(Location);

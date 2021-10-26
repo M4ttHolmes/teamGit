@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import Location from './GeoLocation';
+import Radium from "radium";
+
+const styles = {
+    border: {
+        margin: "auto",
+        width: "40%",
+        border: "2px solid darkblue",
+        marginBottom: "100px"
+    }
+}
 
 class OpenWeather extends React.Component {
     constructor(props) {
@@ -32,12 +41,13 @@ class OpenWeather extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Current Temp: {this.state.temp}</h2>
+            <div style={styles.border}>
+                <h1>Current Temperature:</h1>
+                <h2>{this.state.temp}°</h2>
             </div>
         )
     }
 }
 
 
-export default OpenWeather;
+export default Radium(OpenWeather);
