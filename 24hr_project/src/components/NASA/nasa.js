@@ -3,10 +3,11 @@ import Radium from "radium"
 
 const styles = {
     border: {
-        margin: "auto",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
-        marginBottom: "100px",
         paddingBottom: "50px"
     },
 }
@@ -35,7 +36,7 @@ const Nasa = (props) => {
                 <h1>Your Current Location:</h1>
                 <h4>Latitude: {props.lat}</h4>
                 <h4>Longitude: {props.long}</h4>
-                <img style={{width: "80%"}} src={img} />
+                <img style={{width: "80%"}} src={img} alt={"Satellite Imagery"}/>
             </div>  
         </div>
     )

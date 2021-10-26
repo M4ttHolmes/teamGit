@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import Radium from "radium";
 
 const styles = {
     border: {
-        margin: "auto",
+        marginRight: "auto",
+        marginLeft: "auto",
+        marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
-        marginBottom: "100px"
     }
 }
 
@@ -31,13 +32,13 @@ class OpenWeather extends React.Component {
         fetch(`${this.state.url}lat=${this.props.lat}&lon=${this.props.long}&appid=${this.state.key}&units=imperial`)
         
         .then(response => response.json())
-        .then(json => this.setState({
+        .then(json => 
+            this.setState({
             temp: json.main.temp
         }))
         .catch(err => console.log(err))
         
     };
-
 
     render() {
         return (
