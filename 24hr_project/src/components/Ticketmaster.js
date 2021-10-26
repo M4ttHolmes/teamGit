@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Location from './GeoLocation';
 
 
@@ -7,8 +7,8 @@ class Ticketmaster extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            url: 'https://app.ticketmaster.com/discovery/v2/events/suggest/latlong',
-            key: 'eCqUZLBcgktCoAWOpA2UA8P5TYnsFwjI',
+            url: 'https://app.ticketmaster.com/discovery/v2/events?',
+            key: 'VHKhYGXoMxd7mJA0QBaAJoYBeZZrjLEa',
             lat: '',
             long: ''
         }
@@ -17,15 +17,11 @@ class Ticketmaster extends React.Component {
 
 componentDidMount = () => {
     console.log("Ticketmaster")
-    fetch(`${this.state.url}lat=${this.props.lat}&lon=${this.props.long}&appid=${this.state.key}`)
+    fetch(`${this.state.url}apikey=${this.state.key}&latlong=${this.props.lat},${this.props.long}`)
     
-    .then(response => console.log(response))
-    //response.json())
-
-    //.then(json => {
-        //console.log(response)
+    .then(response => response.json())
+    .then(json => console.log(json))
     .catch(err => console.log(err))
-    //})
    
 };
 
