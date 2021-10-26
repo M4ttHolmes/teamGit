@@ -29,27 +29,3 @@ const Nasa = (props) => {
 }
 
 export default Nasa;
-
-
-
-// class Nasa extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         console.log(props);
-//         this.state = {
-//             baseURL: "https://api.nasa.gov/planetary/earth/imagery",
-//             apiKey: "nVUr5FoFmJLKClcdAVHLm0iBTADCgvGjJoX5nGCL",
-//             lat: props.lat,
-//             long: props.long
-//         }
-//     }
-
-//     componentDidMount = async () => {
-//             await fetch(`${this.state.baseURL}?lon=${this.state.long}&lat=${this.state.lat}&api_key=${this.state.apiKey}&date=2020-01-01`)
-//             .then(response => response.json())
-//             .then(json => {
-//                 console.log(json);
-//             })
-//             .catch(err => console.log(err))
-//     }
-
