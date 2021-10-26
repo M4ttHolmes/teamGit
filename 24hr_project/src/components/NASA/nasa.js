@@ -8,7 +8,8 @@ const styles = {
         marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
-        paddingBottom: "50px"
+        paddingBottom: "50px",
+        borderRadius: "12px"
     },
 }
 

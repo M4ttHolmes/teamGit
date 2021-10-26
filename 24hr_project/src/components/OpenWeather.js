@@ -8,15 +8,17 @@ const styles = {
         marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
+        borderRadius: "12px"
       
     },
     button: {
-        backgroundColor: '#F78A7E',
-        borderColor: '#F78A7E',
-        color: 'white',
+        backgroundColor: "lightgrey",
+        borderColor: 'lightgrey',
+        color: 'darkblue',
         borderRadius: '5px',
         height: '4em',
         width: '10em',
+        marginBottom: "50px"
     }
 }
 
@@ -63,7 +65,7 @@ class OpenWeather extends React.Component {
                 <h2>{this.state.temp}°</h2>
                 <h2>{this.state.weather}</h2>
                 <button style={styles.button}>
-
+                    Convert
                 </button>
             </div>
         )
