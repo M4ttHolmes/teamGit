@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import Location from './GeoLocation';
-
+import React from 'react'
 
 class Ticketmaster extends React.Component {
 
@@ -11,7 +9,8 @@ class Ticketmaster extends React.Component {
             url: 'https://app.ticketmaster.com/discovery/v2/events?',
             key: 'VHKhYGXoMxd7mJA0QBaAJoYBeZZrjLEa',
             lat: '',
-            long: ''
+            long: '',
+            events: []
         }
     }
   
@@ -20,7 +19,9 @@ componentDidMount = () => {
     fetch(`${this.state.url}apikey=${this.state.key}&latlong=${this.props.lat},${this.props.long}`)
     
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => this.setState({
+        events: json._embedded.events
+    }))
     .catch(err => console.log(err))
    
 };
@@ -28,12 +29,17 @@ componentDidMount = () => {
 render() {
     return (
         <div className='main'>
+            <h1> Events in the Area: </h1>
             <ul id='event-name'>
+            {this.state.events.map((event, key) => {
+                    return(
+                        <li key={event}>{event.name}</li>
+                    )
+                })}
             </ul>
             <br />
         </div>
     )
-      
     
 }
 }
