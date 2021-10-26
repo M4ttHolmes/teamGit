@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Location from './GeoLocation';
 
 class OpenWeather extends React.Component {
     constructor(props) {
@@ -33,7 +32,7 @@ class OpenWeather extends React.Component {
     render() {
         return (
             <div>
-                <h2>Current Temp: {this.state.temp}</h2>
+                <h2>Current Temp: {this.state.temp}°</h2>
             </div>
         )
     }
