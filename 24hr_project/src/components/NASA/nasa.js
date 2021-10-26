@@ -14,13 +14,16 @@ const Nasa = (props) => {
           .then((imgBlob) => 
             setImg(URL.createObjectURL(imgBlob))
           )
+          .catch(err => console.log(err))
       }, [])
 
 
     return(
         <div className="main">
             <div className="mainDiv" style={{textAlign: "center"}}>
-                <h1>Test Nasa</h1>
+                <h1>Your Current Location:</h1>
+                <h4>Latitude: {props.lat}</h4>
+                <h4>Longitude: {props.long}</h4>
                 <img style={{width: "500px"}} src={img} />
             </div>  
         </div>
