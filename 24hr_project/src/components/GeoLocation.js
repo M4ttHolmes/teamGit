@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import OpenWeather from "./OpenWeather";
 import Nasa from "./NASA/Nasa";
+import Ticketmaster from "./Ticketmaster"
 
 
 class Location extends React.Component {
@@ -38,6 +39,7 @@ class Location extends React.Component {
         <div>
             <OpenWeather lat = {this.state.lat} long = {this.state.long} />
             <Nasa lat={this.state.lat} long={this.state.long}/>
+            <Ticketmaster lat={this.state.lat} long={this.state.long} />
 
         </div>
       );
