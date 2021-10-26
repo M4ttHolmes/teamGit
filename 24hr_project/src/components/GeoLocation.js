@@ -52,8 +52,8 @@ class Location extends React.Component {
     render() {
       return (
         <div style={styles.body}>
-            <Nasa lat={this.state.lat} long={this.state.long}/>
             <OpenWeather lat = {this.state.lat} long = {this.state.long} />
+            <Nasa lat={this.state.lat} long={this.state.long}/>
             <Ticketmaster lat={this.state.lat} long={this.state.long} />
 
         </div>
