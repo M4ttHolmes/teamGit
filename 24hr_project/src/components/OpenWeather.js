@@ -38,7 +38,6 @@ class OpenWeather extends React.Component {
         }
     }
 
-
     componentDidMount = () => {
         console.log("OpenWeather")
         fetch(`${this.state.url}lat=${this.props.lat}&lon=${this.props.long}&appid=${this.state.key}&units=imperial`)
