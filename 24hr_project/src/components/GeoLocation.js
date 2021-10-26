@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import OpenWeather from "./OpenWeather";
 
 
 class Location extends Component {
@@ -10,9 +11,11 @@ class Location extends Component {
         };
     }
     
+
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(
             (position) => {
+                
                 console.log("Latitude is :", position.coords.latitude);
                 console.log("Longitude is :", position.coords.longitude);
                 console.log(position);
@@ -20,6 +23,7 @@ class Location extends Component {
                     lat: position.coords.latitude,
                     long: position.coords.longitude,
                 })
+            
             },
             function(error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
@@ -33,7 +37,7 @@ class Location extends Component {
           <h1>Your Current Location:</h1>
           <h4>Latitude: {this.state.lat}</h4>
           <h4>Longitude: {this.state.long}</h4>
-
+        <OpenWeather lat = {this.state.lat} long = {this.state.long} />
         </div>
       );
     }
