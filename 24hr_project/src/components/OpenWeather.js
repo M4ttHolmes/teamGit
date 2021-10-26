@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import Radium from "radium";
 
 const styles = {
     border: {
-        margin: "auto",
+        marginRight: "auto",
+        marginLeft: "auto",
+        marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
-        marginBottom: "100px"
+      
     },
     button: {
         backgroundColor: '#F78A7E',
@@ -51,9 +53,9 @@ class OpenWeather extends React.Component {
     //     const temperatureFahrenheit = main.temp
     //     const temperatureCelcius = (temperatureFahrenheit - 32) * (5 / 9)
     //     if (temperatureFahrenheit) {
-
     //     }
     // }
+
     render() {
         return (
             <div style={styles.border}>

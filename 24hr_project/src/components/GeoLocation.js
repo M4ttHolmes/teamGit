@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import OpenWeather from "./OpenWeather";
 import Nasa from "./NASA/Nasa";
 import Ticketmaster from "./Ticketmaster"
@@ -7,7 +7,7 @@ import Radium from "radium";
 const styles = {
 
     body: {
-        backgroundColor: "lightgrey",
+        background: "linear-gradient(0deg, rgba(242,226,177,1) 0%, rgba(215,246,241,1) 100%)",
         color: "darkblue",
         textAlign: "Center",
         position: "relative",

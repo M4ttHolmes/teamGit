@@ -3,10 +3,11 @@ import Radium from "radium";
 
 const styles = {
     border: {
-        margin: "auto",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: "100px",
         width: "40%",
         border: "2px solid darkblue",
-        marginBottom: "100px"
     },
 
     li: {
