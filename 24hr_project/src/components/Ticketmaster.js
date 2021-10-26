@@ -33,7 +33,7 @@ render() {
             <ul id='event-name'>
             {this.state.events.map((event, key) => {
                     return(
-                        <li key={event}>{event.name}</li>
+                        <li key={event}>{event.name}, on {event.dates.start.localDate}</li>
                     )
                 })}
             </ul>
