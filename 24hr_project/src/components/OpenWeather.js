@@ -63,6 +63,7 @@ class OpenWeather extends React.Component {
                 <h1>Current Temperature:</h1>
                 <h2>{this.state.temp}°</h2>
                 <h2>{this.state.weather}</h2>
+    
                 <button style={styles.button}>
                     Convert
                 </button>
