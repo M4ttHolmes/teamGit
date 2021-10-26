@@ -1,4 +1,6 @@
-import React from "react";
+
+import React, { Component } from "react";
+import OpenWeather from "./OpenWeather";
 import Nasa from "./NASA/Nasa";
 
 
@@ -11,9 +13,11 @@ class Location extends React.Component {
         };
     }
     
+
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(
             (position) => {
+                
                 console.log("Latitude is :", position.coords.latitude);
                 console.log("Longitude is :", position.coords.longitude);
                 console.log(position);
@@ -21,6 +25,7 @@ class Location extends React.Component {
                     lat: position.coords.latitude,
                     long: position.coords.longitude,
                 })
+            
             },
             function(error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
@@ -31,7 +36,9 @@ class Location extends React.Component {
     render() {
       return (
         <div>
+            <OpenWeather lat = {this.state.lat} long = {this.state.long} />
             <Nasa lat={this.state.lat} long={this.state.long}/>
+
         </div>
       );
     }
