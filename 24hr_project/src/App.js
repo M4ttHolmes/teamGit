@@ -1,10 +1,12 @@
 import React from "react";
-import Location from "./components/GeoLocation";
+import GeoLocation from "./components/GeoLocation";
+// import Ticketmaster from "./components/TM/Ticketmaster.js"
 
 function App() {
   return(
     <div className="App">
-      <Location />
+      <GeoLocation />
+      {/* <Ticketmaster /> */}
     </div>
   );
 }
