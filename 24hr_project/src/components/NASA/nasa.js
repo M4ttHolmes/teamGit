@@ -1,4 +1,15 @@
 import React, {useState, useEffect} from "react";
+import Radium from "radium"
+
+const styles = {
+    border: {
+        margin: "auto",
+        width: "40%",
+        border: "2px solid darkblue",
+        marginBottom: "100px",
+        paddingBottom: "50px"
+    },
+}
 
 
 const Nasa = (props) => {
@@ -19,7 +30,7 @@ const Nasa = (props) => {
 
 
     return(
-        <div className="main">
+        <div style={styles.border} className="main">
             <div className="mainDiv" style={{textAlign: "center"}}>
                 <h1>Your Current Location:</h1>
                 <h4>Latitude: {props.lat}</h4>
@@ -31,4 +42,4 @@ const Nasa = (props) => {
      
 }
 
-export default Nasa;
+export default Radium(Nasa);

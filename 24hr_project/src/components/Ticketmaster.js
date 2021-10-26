@@ -2,15 +2,17 @@ import React from 'react'
 import Radium from "radium";
 
 const styles = {
+    border: {
+        margin: "auto",
+        width: "40%",
+        border: "2px solid darkblue",
+        marginBottom: "100px"
+    },
 
     li: {
         listStyleType: "none",
         padding: "20px"
     },
-
-    left: {
-
-    }
 
 }
 
@@ -42,8 +44,8 @@ componentDidMount = () => {
 
 render() {
     return (
-        <div className='main'>
-            <h1> Events in the Area: </h1>
+        <div style={styles.border} className='main'>
+            <h1>Popular Events in the Area: </h1>
             <ul id='event-name'>
             {this.state.events.map((event, key) => {
                     return(
