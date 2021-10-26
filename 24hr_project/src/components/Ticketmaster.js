@@ -7,7 +7,7 @@ class Ticketmaster extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            url: 'api.openweathermap.org/data/2.5/weather?',
+            url: 'https://app.ticketmaster.com/discovery/v2/events/suggest/latlong',
             key: 'eCqUZLBcgktCoAWOpA2UA8P5TYnsFwjI',
             lat: '',
             long: ''
