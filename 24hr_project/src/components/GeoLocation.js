@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import Nasa from "./NASA/nasa";
 
 
-class Location extends Component {
+class Location extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lat: 0,
-            long: 0,
+            lat: 39,
+            long: -86,
         };
     }
     
@@ -30,10 +31,10 @@ class Location extends Component {
     render() {
       return (
         <div>
-          <h1>Your Current Location:</h1>
-          <h4>Latitude: {this.state.lat}</h4>
-          <h4>Longitude: {this.state.long}</h4>
-
+            <h1>Your Current Location:</h1>
+            <h4>Latitude: {this.state.lat}</h4>
+            <h4>Longitude: {this.state.long}</h4>
+            <Nasa lat={this.state.lat} long={this.state.long}/>
         </div>
       );
     }

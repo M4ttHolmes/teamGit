@@ -1,10 +1,10 @@
 import React from "react";
-import Location from "./components/GeoLocation";
+import GeoLocation from "./components/GeoLocation";
 
 function App() {
   return(
     <div className="App">
-      <Location />
+      <GeoLocation />
     </div>
   );
 }
