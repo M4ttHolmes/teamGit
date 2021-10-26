@@ -14,7 +14,7 @@ const styles = {
         width: "100vw",
         height: "100%",
         top: "0px" ,
-        paddingTop: "50px"
+        paddingTop: "50px",
     }
 
 }
