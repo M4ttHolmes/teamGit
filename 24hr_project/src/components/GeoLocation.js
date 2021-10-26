@@ -4,7 +4,6 @@ import OpenWeather from "./OpenWeather";
 import Nasa from "./NASA/Nasa";
 import Ticketmaster from "./Ticketmaster"
 
-
 class Location extends React.Component {
     constructor(props) {
         super(props);
